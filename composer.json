@@ -1,0 +1,19 @@
+{
+    "name": "inside/steamspy-api-client",
+    "description": "Steamspy API client for PHP (http://steamspy.com/api.php)",
+    "license": "MIT",
+    "require": {
+        "php": ">=5.4",
+        "ext-curl": "@stable",
+        "nayjest/str-case-converter": "1.0.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "@stable"
+    },
+    "autoload": {
+        "psr-4": {
+            "Inside\\SteamspyApi\\": "src/",
+            "Inside\\SteamspyApi\\Test\\": "tests/"
+        }
+    }
+}
