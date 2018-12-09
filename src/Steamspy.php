@@ -39,6 +39,11 @@ class Steamspy
     protected $lastRequestTime = 0;
 
     /**
+     * @var bool
+     */
+    protected $strict = true;
+
+    /**
      * @var array Default curl options
      */
     protected $curlOpts = [
@@ -53,9 +58,14 @@ class Steamspy
      */
     protected $converter;
 
-    public function __construct()
+    public function __construct($strict = true, ObjectConverter $converter = null)
     {
-        $this->converter = new ObjectConverter(new NamingStrategy(CaseConverter::SNAKE, CaseConverter::CAMEL));
+        $this->strict = (bool)$strict;
+
+        if ($converter === null) {
+            $converter = new ObjectConverter(new NamingStrategy(CaseConverter::SNAKE, CaseConverter::CAMEL));
+        }
+        $this->converter = $converter;
     }
 
     /**
@@ -109,7 +119,7 @@ class Steamspy
      */
     protected function prepareApp($appData)
     {
-        return $this->converter->getObject('Inside\SteamspyApi\Enitity\App', $appData, true);
+        return $this->converter->getObject('Inside\SteamspyApi\Enitity\App', $appData, $this->strict);
     }
 
     /**
