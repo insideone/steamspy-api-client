@@ -98,6 +98,16 @@ class App
     public $tags = [];
 
     /**
+     * @var int Positive reviews count
+     */
+    public $positive;
+
+    /**
+     * @var int Negative reviews count
+     */
+    public $negative;
+
+    /**
      * App is hidden?
      * @return bool
      */
@@ -132,5 +142,10 @@ class App
     {
         $this->publishers = explode(self::SEPARATOR, $publisher);
         return $this;
+    }
+
+    public function getReviewsCount()
+    {
+        return $this->positive + $this->negative;
     }
 }
