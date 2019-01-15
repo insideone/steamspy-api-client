@@ -8,12 +8,15 @@
         "nayjest/str-case-converter": "1.0.*"
     },
     "require-dev": {
-        "phpunit/phpunit": "@stable"
+        "phpunit/phpunit": "^5.0"
     },
     "autoload": {
         "psr-4": {
             "Inside\\SteamspyApi\\": "src/",
             "Inside\\SteamspyApi\\Test\\": "tests/"
         }
+    },
+    "scripts": {
+        "test": "phpunit"
     }
 }

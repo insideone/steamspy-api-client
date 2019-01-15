@@ -5,6 +5,7 @@ namespace Inside\SteamspyApi\Enitity;
 class App
 {
     const SEPARATOR = ';';
+    const COMMA_SEPARATOR = ', ';
     const HIDDEN_ID = 999999;
 
     /**
@@ -108,6 +109,31 @@ class App
     public $negative;
 
     /**
+     * @var int Users review score
+     */
+    public $userscore;
+
+    /**
+     * @var float Full value game price
+     */
+    public $initialprice;
+
+    /**
+     * @var int Discount percent
+     */
+    public $discount;
+
+    /**
+     * @var string[] Languages
+     */
+    public $languages;
+
+    /**
+     * @var string[] Genres
+     */
+    public $genre;
+
+    /**
      * App is hidden?
      * @return bool
      */
@@ -147,5 +173,16 @@ class App
     public function getReviewsCount()
     {
         return $this->positive + $this->negative;
+    }
+
+    public function setLanguages($languages)
+    {
+        $this->languages = explode(self::COMMA_SEPARATOR, $languages);
+        return $this;
+    }
+
+    public function setGenre($genres)
+    {
+        $this->genre = explode(self::COMMA_SEPARATOR, $genres);
     }
 }
