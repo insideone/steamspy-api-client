@@ -21,7 +21,7 @@ class Steamspy
     /**
      * API service URL
      */
-    const URL = 'http://steamspy.com/api.php';
+    const URL = 'https://steamspy.com/api.php';
 
     /**
      * Default poll rate to API
