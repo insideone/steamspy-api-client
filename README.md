@@ -3,7 +3,7 @@ Steamspy API client for PHP (http://steamspy.com/api.php)
 
 ## Installing
 ```bash
-composer require inside/steamspy-api
+composer require inside/steamspy-api-client
 ```
 
 ## Usage
